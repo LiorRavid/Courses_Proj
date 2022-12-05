@@ -1,0 +1,39 @@
+.header{
+    width: 100%;
+    height: 10vh;
+    background-color: $lightOrange;
+    color: $white;
+    display: flex;
+    align-items: center;
+
+    .header-navBar{
+        width: 100%;
+        height: fit-content;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo{
+            font-size: 3rem;
+            font-family: Rubik-Maze;
+        }
+
+        .nav-bar{
+            height: 100%;
+    
+            .login{
+                text-decoration: none;
+                color:$white;
+                border-radius: 10%;
+                font-size: 1.5rem;
+            }
+
+            .login:hover{
+                background-color: rgb(212, 212, 212,0.5);
+                color: $darkBlue;
+            }
+        }
+    }
+
+}
