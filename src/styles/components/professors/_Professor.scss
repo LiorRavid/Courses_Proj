@@ -1,0 +1,44 @@
+.professor-dashboard-container{
+    width: 100%;
+    height: calc(100vh - 10vh);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:15px;
+
+    .edit-user-container,.courses-container,.students-container{
+        width: 260px;
+        height:300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid $blue;
+        border-radius: 10px;
+        box-shadow: 0px 2px 15px -5px rgba(0,0,0,0.96);
+        gap:10px;
+        transition: transform .2s;
+
+        p{
+            font-size: 1.5rem;
+        }
+
+        .edit-user-img, .courses-img, .students-img{
+            font-size: 90px;
+            font-weight: 400;
+            color:$blue;
+        }
+
+    }
+    
+    .edit-user-container:hover,.courses-container:hover,.students-container:hover{
+        transform: scale(1.2);
+        border-color: $lightOrange;
+        cursor: pointer;
+
+        .edit-user-img, .courses-img, .students-img{
+            color: $lightOrange;
+        }
+    }
+}

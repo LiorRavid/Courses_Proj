@@ -1,7 +1,8 @@
 .header{
     width: 100%;
     height: 10vh;
-    background-color: $lightOrange;
+    // background-color: $lightOrange;
+    background: linear-gradient(to bottom, $lightOrange 0%, $lightOrange 95%, $white 100%);
     color: $white;
     display: flex;
     align-items: center;
@@ -16,6 +17,7 @@
 
         .logo{
             font-size: 3rem;
+            color:$white;
             font-family: Rubik-Maze;
         }
 

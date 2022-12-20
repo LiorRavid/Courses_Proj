@@ -1,0 +1,29 @@
+.main{
+    width: 100%;
+    height: calc(100vh - 10vh);
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+
+    .home-page-container{
+        text-align: center;
+        margin-top: 20vh;
+
+        h1{
+            font-size: 4rem;
+            font-weight: 700;
+        }
+    
+        h2{
+            margin-top: 1rem;
+            font-size: 2rem;
+        }
+    
+        .home-page-link{
+            text-decoration: underline;
+            color: $skyBlue;
+            font-size: 1.8rem;
+        }
+    }
+
+}
