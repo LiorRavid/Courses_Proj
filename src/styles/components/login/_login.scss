@@ -33,6 +33,26 @@
         }
     }
 
+    .select-box{
+        margin-top: 1rem;
+        padding: 0.5rem;
+
+        #title:focus{
+            outline-color: $blue;
+        }
+
+        .title-label{
+            padding-right: 5px;
+            color: #757779;
+        }
+
+        option{
+            color: #757779;
+        }
+    }
+
+    
+
     button {
         display: block;
         padding: 0.5rem;

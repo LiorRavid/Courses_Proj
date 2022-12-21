@@ -143,6 +143,13 @@ const SubscribeForm = (props) => {
         <div className="login-form">
             <h3>Subscribe</h3>
             <form onSubmit={ onSubmitform }>
+                <div className='select-box'>
+                    <label for="title" className='title-label'>Title</label>
+                    <select name="title" id="title">
+                        <option value="student">Student</option>
+                        <option value="professor">Professor</option>
+                    </select>
+                </div>
                 <input placeholder="Username" className={ inputClasses[0] } onBlur={ onBlurUsername } />
                 { invalidMessages[0] !== "" && <div className="invalid-message">{ invalidMessages[0] }</div> }
                 <input placeholder="Age" type="number" className={ inputClasses[1] } onBlur={ onBlurAge } />

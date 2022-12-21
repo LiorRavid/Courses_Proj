@@ -1,10 +1,10 @@
-import {makeId} from "./util.service";
-import {loadFromStorage,saveToStorage} from "./storage.service";
+import {utilService} from "./util.service";
+import {storageService} from "./storage.service";
 
-const STORAGE_KEY = 'Students_DB';
+const STORAGE_KEY = 'CourseDB';
 const gCourses = [
     {
-        id:makeId(),
+        id:utilService.makeId(),
         name:"Math-101",
         startingDate: new Date("2022-10-01"),
         endingDate: new Date("2023-01-06"),
@@ -17,9 +17,9 @@ const gCourses = [
 _createCourses();
 
 function _createCourses() {
-    let courses = loadFromStorage(STORAGE_KEY);
+    let courses = storageService.loadFromStorage(STORAGE_KEY);
     if (!courses || !courses.length) {
         courses = gCourses;
     }
-    saveToStorage(courses);
+    storageService.saveToStorage(STORAGE_KEY,courses);
 }

@@ -1,5 +1,5 @@
 export const utilService = {
-    makeId,
+    makeId
 };
 
 function makeId(length = 6) {

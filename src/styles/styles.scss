@@ -5,9 +5,10 @@
 // Basics
 @import './base/base';
 @import './components/main/Header';
+@import './components/main/Loader';
+@import './components/main/Main';
 
 // components
-@import './components/main/Loader';
 @import './components/home/home';
 @import './components/login/login';
-@import './components/professors/Professor';
+@import './components/user/user';

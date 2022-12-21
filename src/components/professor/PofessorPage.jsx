@@ -21,7 +21,7 @@ const ProfessorPage = ()=>{
 
     return (
         <React.Fragment>
-            <div className="professor-dashboard-container">
+            <div className="user-dashboard-container">
                 <div className="edit-user-container" onClick={onClickEditUser}>
                     <FaUserEdit className="edit-user-img"/>
                     <p>Edit User</p>
