@@ -6,8 +6,8 @@ const HomePage = () => {
         <div className="home-page">
             <div className="home-page-container">
                 <h1>Welcome To Moodle</h1>
-                <h2>You can start here</h2>
-                <Link className="home-page-link" to="/login">Start</Link>
+                <h2>Please login</h2>
+                <Link className="home-page-link" to="/login">Login</Link>
             </div>
         </div>
     );
