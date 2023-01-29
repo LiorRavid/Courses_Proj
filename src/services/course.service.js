@@ -24,7 +24,7 @@ window.studentService = studentService
 
 async function getCourse(professorToken,courseName){
     try{
-        const headers = {Authorization:"Bearer" + professorToken};
+        const headers = {headers:{Authorization:"Bearer" + professorToken}};
         const course = await axios.get(`${URL}/course/${courseName}`, {} , headers);
         return course.data;
     }catch(error){
@@ -34,7 +34,7 @@ async function getCourse(professorToken,courseName){
 
 async function getAttendances(professorToken,courseName,date){
     try{
-        const headers = {Authorization:"Bearer" + professorToken};
+        const headers = {headers: {Authorization:"Bearer" + professorToken}};
         const attendances = await axios.get(`${URL}/course/${courseName}/${date}`, {} , headers);
         return attendances.data;
     }catch(error){
@@ -44,7 +44,7 @@ async function getAttendances(professorToken,courseName,date){
 
 async function addCourse(professorToken,courseData){
     try{
-        const headers = {Authorization:"Bearer" + professorToken};
+        const headers = {headers: {Authorization:"Bearer" + professorToken}};
         const course = await axios.post(`${URL}/course/new-course`, courseData , headers);
         return course.data;
     }catch(error){
@@ -54,7 +54,7 @@ async function addCourse(professorToken,courseData){
 
 async function addStudentToCourse(studntEmail,professorToken,courseName){
     try{
-        const headers = {Authorization:"Bearer" + professorToken};
+        const headers = {headers: {Authorization:"Bearer" + professorToken}};
         const enroll = await axios.post(`${URL}/proffesor/student/course/${studntEmail}`, {courseName} , headers);
         return enroll.data;
     }catch(error){
@@ -64,7 +64,7 @@ async function addStudentToCourse(studntEmail,professorToken,courseName){
 
 async function removeStudentFromCourse(studntEmail,professorToken,courseName){
     try{
-        const headers = {Authorization:"Bearer" + professorToken};
+        const headers = {headers: {Authorization:"Bearer" + professorToken}};
         const res = await axios.delete(`${URL}/proffesor/student/course/${studntEmail}`, {courseName} , headers);
         return res.data;
     }catch(error){
@@ -74,7 +74,7 @@ async function removeStudentFromCourse(studntEmail,professorToken,courseName){
 
 async function getStudentCourses(studentToken){
     try{
-        const headers = {Authorization:"Bearer" + studentToken};
+        const headers = {headers: {Authorization:"Bearer" + studentToken}};
         const courses = await axios.get(`${URL}/student/course`, {} , headers);
         return courses.data;
     }catch(error){
@@ -84,7 +84,7 @@ async function getStudentCourses(studentToken){
 
 async function getProfessorCourses(professorToken){
     try{
-        const headers = {Authorization:"Bearer" + professorToken};
+        const headers = {headers: {Authorization:"Bearer" + professorToken}};
         const courses = await axios.get(`${URL}/course/professor`, {} , headers);
         return courses.data;
     }catch(error){
@@ -94,7 +94,7 @@ async function getProfessorCourses(professorToken){
 
 async function getStudentCourse(studentToken,courseName){
     try{
-        const headers = {Authorization:"Bearer" + studentToken};
+        const headers = {headers: {Authorization:"Bearer" + studentToken}};
         const course = await axios.get(`${URL}/student/course/${courseName}`, {} , headers);
         return course.data;
     }catch(error){
@@ -104,7 +104,7 @@ async function getStudentCourse(studentToken,courseName){
 
 async function editCourseAttendance(studentToken,courseName,attendaceData){
     try{
-        const headers = {Authorization:"Bearer" + studentToken};
+        const headers = {headers: {Authorization:"Bearer" + studentToken}};
         const res = await axios.patch(`${URL}/student/course/${courseName}`, attendaceData , headers);
         return res.data;
     }catch(error){
@@ -114,7 +114,7 @@ async function editCourseAttendance(studentToken,courseName,attendaceData){
 
 async function deleteCourse(professorToken,courseName){
     try{
-        const headers = {Authorization:"Bearer" + professorToken};
+        const headers = {headers: {Authorization:"Bearer" + professorToken}};
         const res = await axios.delete(`${URL}/course/${courseName}`, {} , headers);
         return res.data;
     }catch(error){

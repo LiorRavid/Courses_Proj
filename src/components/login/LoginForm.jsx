@@ -52,11 +52,9 @@ const LoginForm = (props) => {
 	};
 
 	const onSubmitform = async(event) => {
-		console.log("submit");
 		event.preventDefault();
 		try{
 			const user = await loginUser({email,password,role});
-			console.log('user',user);
 			dispatchUserData(loginAction(user));
 			if(role === "professor")navigate('/professor');
 			else if(role === "student")navigate('/student');

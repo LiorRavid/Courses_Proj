@@ -7,7 +7,8 @@ export const LoginContext = createContext();
 
 const LoginContextProvider = (props) => {
     const cookieUserData = getUserFromCookie();
-    const [userData, dispatchUserData] = useReducer(loginReducer, cookieUserData || userDataInitialState);
+    const initialData = cookieUserData || userDataInitialState;
+    const [userData, dispatchUserData] = useReducer(loginReducer, initialData);
 
     return (
         <LoginContext.Provider value={ { userData, dispatchUserData } }>

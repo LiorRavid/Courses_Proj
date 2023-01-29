@@ -17,8 +17,9 @@ export {
 
 async function editProfessor(professor,token) {
     try{
-        const headers = {Authorization:"Bearer" + token};
+        const headers = {headers: {Authorization:"Bearer " + token}};
         professor = await axios.patch(`${URL}/professor/edit`,professor ,headers);
+        _saveProfessor(professor.data);
         return professor.data;
     }catch(error){
         throw error;
@@ -27,7 +28,7 @@ async function editProfessor(professor,token) {
 
 async function createProfessor(professorInfo,token) {
     try{
-        const headers = {Authorization:"Bearer" + token};
+        const headers = {headers: {Authorization:"Bearer " + token}};
         const professor = await axios.post(`${URL}/professor/new-professor`, professorInfo, headers);
         return professor.data;
     }catch(error){
@@ -37,9 +38,7 @@ async function createProfessor(professorInfo,token) {
 
 async function loginProfessor(professorInfo) {
     // try{
-        console.log('professorInfo',professorInfo);
         const professor = await axios.post(`${URL}/professor/login`, professorInfo);
-        console.log('professor.data',professor.data);
         if (professor.data) {return _saveProfessor(professor.data)};
     // }catch(error){
     //     throw error;
@@ -48,7 +47,7 @@ async function loginProfessor(professorInfo) {
 
 async function logoutProfessor(token) {
     try{
-        const headers = {Authorization:"Bearer" + token};
+        const headers = {headers:{Authorization:"Bearer " + token}};
         deleteUserFromCookie();
         const res = await axios.post(`${URL}/professor/logout`, {}, headers);
         return res.data;
@@ -58,7 +57,6 @@ async function logoutProfessor(token) {
 }
 
 function _saveProfessor(user) {
-    console.log('userCookie',user);
     saveUserOnCookie(user);
     return user;
 }

@@ -22,7 +22,7 @@ export {
 
 async function editStudent(student,token) {
     try{
-        const headers = {Authorization:"Bearer" + token};
+        const headers = {headers: {Authorization:"Bearer " + token}};
         student = await axios.patch(`${URL}/student/edit`,student ,headers);
         return student.data;
     }catch(error){
@@ -32,7 +32,7 @@ async function editStudent(student,token) {
 
 async function createStudent(studentInfo,token) {
     try{
-        const headers = {Authorization:"Bearer" + token};
+        const headers = {headers: {Authorization:"Bearer " + token}};
         const student = await axios.post(`${URL}/professor/new-student`, studentInfo, headers);
         return student.data;
     }catch(error){
@@ -51,7 +51,7 @@ async function loginStudent(studentInfo) {
 
 async function logoutStudent(token) {
     try{
-        const headers = {Authorization:"Bearer" + token};
+        const headers = {headers: {Authorization:"Bearer " + token}};
         deleteUserFromCookie();
         const res = await axios.post(`${URL}/student/logout`, {}, headers);
         return res.data;
@@ -62,7 +62,7 @@ async function logoutStudent(token) {
 
 async function getStudentById(studentId,professorToken){
     try{
-        const headers = {Authorization:"Bearer" + professorToken};
+        const headers = {headers: {Authorization:"Bearer " + professorToken}};
         const student = await axios.get(`${URL}/professor/student/${studentId}`,{},headers);
         return student.data;
     }catch(error){
@@ -72,7 +72,7 @@ async function getStudentById(studentId,professorToken){
 
 async function deleteStudent(studentEmail,professorToken){
     try{
-        const headers = {Authorization:"Bearer" + professorToken};
+        const headers = {headers: {Authorization:"Bearer " + professorToken}};
         const res = await axios.delete(`${URL}/professor/student/${studentEmail}`, {}, headers);
         return res.data;
     }catch(error){
